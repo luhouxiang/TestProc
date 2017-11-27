@@ -132,8 +132,10 @@ orderAmount      委托钱数           string
 price            价格，利率         string
 status           状态              string              1：正常状态，0：停止，2：暂停
 runDay           运行天数           string
-createTime       创建时间
-endDate          截止日期
+createTime       创建时间           string
+endDate          截止日期           string             "2017-03-05"
+orderStartTime   开始时段           string             "14:30:00"
+orderEndTime     结束时段           string             "15:00:00"
 ===============  ================  ==========  =====  ===========================================
 
 * 订阅列表查询（type: 1）
