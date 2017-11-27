@@ -203,15 +203,15 @@ stockCode        代码               string
              "message": "数据过期,未进行申购",
              "orderAmount": "10000.00",
              "sndTime": "2017-11-15",
-             "status": "-3",
+             "state": "-3",
              "stockCode": "131810"
          },
          {
              "marketId": "0",
-             "message": "数据过期,未进行申购",
+             "message": "委托成功,合同号:[1]",
              "orderAmount": "10000.00",
              "sndTime": "2017-11-15",
-             "status": "-3",
+             "state": "2",
              "stockCode": "131810"
          }
      ],
