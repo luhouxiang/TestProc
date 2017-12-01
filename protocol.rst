@@ -25,7 +25,6 @@ order            订阅数据           数组          
 ---------------  ----------------  ----------  -----  -------------------------------------------
 gddm             股东代码           string
 marketId         市场代码           string
-orderDate        订阅日期           string                 2017-11-14
 orderStartTime   开始时段           string                 14:30:00
 orderEndTime     结束时段           string                 22:00:00
 stockCode        代码               string                
@@ -36,7 +35,7 @@ orderAmount      金额               string
 endDate          截止日期           string                 2017-11-14
 ===============  ================  ==========  =====  ===========================================
 
-* 定制,修改（orderType:1,3）
+* 定制,修改（orderType:1）
 ::
  
  http://172.16.239.239:21800/api/autotrade/reverse_order
@@ -53,7 +52,6 @@ endDate          截止日期           string                 2017-11
       {
          "gddm" : "A231941760",
          "marketId" : "0",
-         "orderDate" : "2017-11-14",
          "orderStartTime" : "14:30:00",
          "orderEndTime" : "22:00:00",
          "stockCode" : "131810",
@@ -92,18 +90,22 @@ endDate          截止日期           string                 2017-11
  }
  {
      "code": "0",
+     "orderId": "1",
      "message": "终止成功"
  }
  {
     "code": "0",
+    "orderId": "1",
     "message": "暂停成功"
  }
+{
+  "message": "预约成功",
+  "orderId": "1",
+  "code": "0"
+}
  {
     "code": "0",
-    "message": "启动成功"
- }
- {
-    "code": "0",
+    "orderId": "1",
     "message": "预约成功"
  }
 
@@ -168,6 +170,7 @@ orderEndTime     结束时段           string             "15:00:00"
             "runDay": "1",
             "status": "1",
             "stockCode": "131811",
+            "marketId":"0",
             "stockExplain": "一天期",
             "stockName": "R－002"
         },
@@ -200,7 +203,9 @@ orderEndTime     结束时段           string             "15:00:00"
      "serviceId" : "8002",
      "type" : "0",
      "marketId": "0",
-     "stockCode": "131810"
+     "stockCode": "131810",
+     "page": "1",
+     "count":"20"
  }
 
 
