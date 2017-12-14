@@ -141,7 +141,7 @@ orderEndTime     结束时段           string             "15:00:00"
 ===============  ================  ==========  =====  ===========================================
 
 
-* 运行结果查询（type: 0）
+* 1 运行结果查询（type: 0）
 ::
  
  http://172.16.239.239:21800/api/autotrade/reverse_query
@@ -183,7 +183,7 @@ orderEndTime     结束时段           string             "15:00:00"
  }
 
 
-* 订阅列表查询（type: 1）
+* 2 订阅列表查询（type: 1）
 ::
  
  http://172.16.239.239:21800/api/autotrade/reverse_query
@@ -237,7 +237,8 @@ orderEndTime     结束时段           string             "15:00:00"
     "orderId": "26"
  }
  
- * 订阅详请查询（type: 2）
+ 
+* 3 订阅详请查询（type: 2）
 ::
  
  http://172.16.239.239:21800/api/autotrade/reverse_query
