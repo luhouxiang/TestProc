@@ -121,7 +121,7 @@ endDate          截止日期           string                 2017-11
 ===============  ================  ==========  =====  ===========================================
 identifier       用户标识符         string      Y      客户号
 serviceId        服务类型           string      Y      8002：表示国债逆回购
-type             查询类型           string      Y      1: 订阅列表查询，2: 订阅详情查询
+type             查询类型           string      Y      0：运行结果查询，1: 订阅列表查询，2: 订阅详情查询
 order            订阅数据           数组          
 ---------------  ----------------  ----------  -----  -------------------------------------------
 marketId         市场代码           string
@@ -139,6 +139,49 @@ endDate          截止日期           string             "2017-03-05"
 orderStartTime   开始时段           string             "14:30:00"
 orderEndTime     结束时段           string             "15:00:00"
 ===============  ================  ==========  =====  ===========================================
+
+
+* 运行结果查询（type: 0）
+::
+ 
+ http://172.16.239.239:21800/api/autotrade/reverse_query
+ {
+     "identifier" : "101500000010",
+     "serviceId" : "8002",
+     "type" : "0",
+     "marketId": "0",
+     "stockCode": "131810",
+     "page": "1",
+     "count":"20"
+ }
+
+
+返回::
+
+ {
+     "code": "0",
+     "message": "ok",
+     "order": [
+         {
+             "marketId": "0",
+             "message": "数据过期,未进行申购",
+             "orderAmount": "10000.00",
+             "sndTime": "2017-11-15",
+             "state": "-3",
+             "stockCode": "131810"
+         },
+         {
+             "marketId": "0",
+             "message": "委托成功,合同号:[1]",
+             "orderAmount": "10000.00",
+             "sndTime": "2017-11-15",
+             "state": "2",
+             "stockCode": "131810"
+         }
+     ],
+     "orderId": "26"
+ }
+
 
 * 订阅列表查询（type: 1）
 ::
@@ -193,47 +236,49 @@ orderEndTime     结束时段           string             "15:00:00"
     ],
     "orderId": "26"
  }
-
-* 订单详情查询（type: 0）
+ 
+ * 订阅详请查询（type: 2）
 ::
  
  http://172.16.239.239:21800/api/autotrade/reverse_query
  {
-     "identifier" : "101500000010",
-     "serviceId" : "8002",
-     "type" : "0",
-     "marketId": "0",
-     "stockCode": "131810",
-     "page": "1",
-     "count":"20"
+  "identifier" : "101500000010",
+  "serviceId" : "8002",
+  "type" : "1",
+  "marketId": "0",
+  "stockCode": "131810"
  }
 
 
 返回::
 
  {
-     "code": "0",
-     "message": "ok",
-     "order": [
-         {
-             "marketId": "0",
-             "message": "数据过期,未进行申购",
-             "orderAmount": "10000.00",
-             "sndTime": "2017-11-15",
-             "state": "-3",
-             "stockCode": "131810"
-         },
-         {
-             "marketId": "0",
-             "message": "委托成功,合同号:[1]",
-             "orderAmount": "10000.00",
-             "sndTime": "2017-11-15",
-             "state": "2",
-             "stockCode": "131810"
-         }
-     ],
-     "orderId": "26"
+    "code": "0",
+    "message": "ok",
+    "order": [
+        {
+            "buyCount": "7",
+            "buyOkCount": "2",
+            "buyOkRate": "0.286",
+            "createTime": "2017-11-16",
+            "endDate": "2017-11-30",
+            "orderAmount": "10000.00",
+            "orderEndTime": "15:00:00",
+            "orderStartTime": "14:30:00",
+            "price": "0.01",
+            "runDay": "1",
+            "status": "1",
+            "stockCode": "131811",
+            "marketId":"0",
+            "stockExplain": "一天期",
+            "stockName": "R－002"
+        }
+    ],
+    "orderId": "26"
  }
+
+
+
 
 
 
