@@ -166,15 +166,17 @@ orderEndTime     结束时段           string             "15:00:00"
              "marketId": "0",
              "message": "数据过期,未进行申购",
              "orderAmount": "10000.00",
-             "sndTime": "2017-11-15",
+             "days":"3",
+             "sndTime": "2017-11-15 13:05:04",
              "state": "-3",
              "stockCode": "131810"
          },
          {
              "marketId": "0",
              "message": "委托成功,合同号:[1]",
+             "days":"2",
              "orderAmount": "10000.00",
-             "sndTime": "2017-11-15",
+             "sndTime": "2017-11-15 13:12:11",
              "state": "2",
              "stockCode": "131810"
          }
